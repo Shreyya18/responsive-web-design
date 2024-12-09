@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+
+    <title>Device Shop Checkout | devChallenges.io</title>
+
+    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        width: 100vw;
+        background: url(resources/background-image@2x.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .author-info {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 16px;
+        color: rgb(55, 65, 81);
+      }
+
+      .author-info a {
+        text-decoration: none;
+      }
+      header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        color: white;
+        margin-top: 10px;
+      }
+
+      header h3 {
+        background-color: rgba(0, 0, 0, 0.365);
+        margin-left: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        align-items: center;
+        width: 40px;
+        height: 15px;
+        font-size: 10px;
+        text-align: center;
+      }
+      .dashboard {
+        width: 450px;
+        height: 500px;
+        background-color: #e5e7eb;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        margin-left: 20px;
+        margin-top: 20px;
+        padding: 10px;
+      }
+
+      .contact-detail {
+        width: 450px;
+        height: 500px;
+        background-color: white;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-right: 20px;
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid rgba(128, 128, 128, 0.393);
+        
+      }
+
+      .contact-detail * {
+        display: block;
+        padding: 10px;
+        margin: 10px;
+        width: 90%;
+      }
+      main {
+        display: flex;
+        justify-content: center;
+        margin-left: 0px;
+      }
+      img {
+        height: 50px;
+        align-items: center;
+      }
+      .img-div{
+        width: 70px;
+        height: 70px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        place-items: center;
+        border-radius: 10px;
+        margin-left: 10px;
+      }
+
+      td{
+        padding: 2px;
+      
+      }
+      .dashboard input[type="text"]{
+        padding: 10px;
+        width:300px;
+        margin-bottom: 10px;
+      }
+      .dashboard input[type="button"]{
+        padding: 10px;
+        background-color: black;
+        color: white;
+        margin-bottom: 10px;
+      }
+      .span-td{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        
+      }
+      span{
+        padding-bottom: 5px;
+        margin: 5px;
+      }
+      span:nth-of-type(1){
+        font-weight: bold;
+      }
+      .prize{
+        font-weight: bold;
+      }
+      .total{
+        font-weight: bold;
+      }
+      .contact-detail label{
+        padding-bottom: 0px;
+      }
+      #continue{
+        display:flex;
+        justify-content: center;
+        margin-top: 25px;
+        background-color: black;
+        color:white;
+      }
+      @media screen and (max-width: 640px) {
+        main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-detail{
+        margin-left: 39px;
+        margin-top: 0px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        
+      }
+      .dashboard{
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-bottom:0px;
+
+      }
+      .dashboard input[type="text"]{
+        padding: 10px;
+        width:250px;
+        margin-bottom: 10px;
+      }
+      .dashboard input[type="button"]{
+        padding: 10px;
+        background-color: black;
+        color: white;
+        margin-bottom: 10px;
+      }
+      
+      }
+
+      @media screen and (max-width: 1024px) {
+        main {
+          display: flex;
+        justify-content: center;
+        margin-left: 0px;
+      }
+      .contact-detail{
+        width: 400px;
+        height: 500px;
+        background-color: white;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-right: 20px;
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid rgba(128, 128, 128, 0.393);
+      }
+      .dashboard{
+        width: 400px;
+        height: 500px;
+        background-color: #e5e7eb;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        margin-left: 20px;
+        margin-top: 20px;
+        padding: 10px;
+      }
+      .dashboard input[type="text"]{
+        padding: 10px;
+        width:250px;
+        margin-bottom: 10px;
+      }
+      .dashboard input[type="button"]{
+        padding: 10px;
+        background-color: black;
+        color: white;
+        margin-bottom: 10px;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <!--     
+    Checkout
+    
+    3 items
+    
+    iPhone 12 Pro
+    
+    Golden
+    
+    $999.00
+    
+    x 1
+    
+    Apple Watch
+    
+    Blue
+    
+    $399.00
+    
+    iMac
+    
+    Green
+    
+    $1199.00
+    
+    Enter coupon code
+    
+    Apply Coupon
+    
+    Sub total
+    
+    $2597.00
+    
+    Tax
+    
+    $623.28
+    
+    Total
+    
+    $3220.28
+    
+    Contact Information
+    
+    First & Last name
+    
+    Enter first & last name
+    
+    Email Address
+    
+    Enter email address
+    
+    Country
+    
+    Finland
+    
+    Postal Code
+    
+    00270
+    
+    Continue
+     -->
+    <div class="container">
+      <header>
+        <h2>Checkout</h2>
+        <h3>3 items</h3>
+      </header>
+
+      <main>
+        <section class="dashboard">
+          <table>
+            <tr>
+              <td>
+                <div class="img-div"><img src="resources/Gold@2x.png" alt="" /></div>
+                
+              </td>
+              <td class="span-td"><span>iPhone 12 Pro </span> <span>Golden</span><span>x 1</span>
+                 </td>
+              <td class="prize">$999.00</td>
+            </tr>
+            <tr>
+              <td >
+                <div class="img-div"><img src="resources/Apple-watchx2.png" alt="" /></div>
+                
+              </td>
+              <td class="span-td"><span>Apple Watch</span> <span>Blue </span><span>x 1</span></td>
+              <td class="prize">$399.00</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="img-div"><img src="resources/iMac@2x.png" alt="" /></div>
+                
+              </td>
+              <td class="span-td"><span>iMac </span><span>Green</span> <span>x 1</span></td>
+              <td class="prize">$1199.00</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input
+                  type="text"
+                  name="coupon"
+                  id="coupon"
+                  placeholder="Enter coupon code"
+                />
+              </td>
+              <td><input type="button" value="Apply Coupon" /></td>
+            </tr>
+            <tr>
+              <td colspan="2">Sub total</td>
+              <td>$2597.00</td>
+            </tr>
+            <tr>
+              <td colspan="2">Tax</td>
+              <td>$623.28</td>
+            </tr>
+            <tr>
+              <td colspan="2" class="total">Total</td>
+              <td class="total">$3220.28</td>
+            </tr>
+          </table>
+        </section>
+        <section class="contact-detail">
+          <h3>Contact Information</h3>
+          <label for="name">First & Last name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter first & last name"
+          />
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter email address"
+          />
+          <label for="country">Country</label>
+          <select name="country" id="country">
+            <option value="">--Select your Country--</option>
+            <option value="Finland">Finland</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+          </select>
+          <label for="postal">Postal Code</label>
+          <input type="number" name="postal" id="postal"  placeholder="Enter your postal code"/>
+          <input type="button" value="Continue" id="continue" />
+        </section>
+      </main>
+    </div>
+
+    <div class="author-info">
+      Coded by <a href="#">Shreya</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </div>
+  </body>
+</html>
